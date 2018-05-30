@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="window-component">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `window-component`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class WindowComponent extends Polymer.Element {
+      static get is() { return 'window-component'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'window-component'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(WindowComponent.is, WindowComponent);
+  </script>
+</dom-module>

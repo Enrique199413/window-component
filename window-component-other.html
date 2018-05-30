@@ -1,0 +1,43 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="window-component-other">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>[[prop1]]</h2>
+  </template>
+
+  <script>
+    /**
+     * `window-component-other`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class WindowComponentOther extends Polymer.Element {
+      static get is() { return 'window-component-other'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'window-component-other'
+          }
+        };
+      }
+
+      ready() {
+        super.ready()
+        let openedWindow = window.open('ASD', '_blank', 'toolbar=no')
+        openedWindow.document.write(`<html><link rel="import" href="../polymer/polymer-element.html"><body>Hola</body></html>`)
+
+      }
+    }
+
+    window.customElements.define(WindowComponentOther.is, WindowComponentOther);
+  </script>
+</dom-module>
